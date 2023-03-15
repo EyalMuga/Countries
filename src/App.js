@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import ChuckNorrisJokePage from "./chuck-norris-joke/chuck-norris-joke";
 import AboutPage from "./about/about";
 import CountdownPage from "./Countdown/countdownPage";
+import IPPage from "./IP/IPPage";
 
 export default function App() {
     const [timeLeft, setTimeLeft] = useState(0);
@@ -35,6 +36,7 @@ export default function App() {
                 <Route path="/" element={<Layout />}>
                     <Route path="/" element={<Home />} />
                     <Route path="countries/" element={<CountriesPage />} />
+                    <Route path="IP/" element={<IPPage />} />
                     <Route
                         path="chuck-norris-joke/"
                         element={<ChuckNorrisJokePage />}

@@ -37,6 +37,11 @@ export default function Layout() {
                             Countdown
                         </Link>
                     </MenuItem>
+                    <MenuItem>
+                        <Link to="IP/" className="nav-link">
+                            IP
+                        </Link>
+                    </MenuItem>
                 </Toolbar>
             </AppBar>
             <Outlet />
