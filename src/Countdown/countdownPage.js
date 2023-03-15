@@ -4,7 +4,6 @@ import Countdown from "./countdown";
 
 export default function CountdownPage({ onSecondsSubmitted, timeLeft }) {
     const [secondsInput, setSecondsInput] = useState("");
-
     return (
         <Box sx={{ textAlign: "center" }}>
             <h1>Countdown</h1>

@@ -16,6 +16,7 @@ export default function App() {
         if (timeLeft === 0) {
             return;
         }
+        // need to set timerId to a variable so we can clear it later
         console.log("setting timer", timeLeft);
         const timerId = setTimeout(() => {
             setTimeLeft((t) => t - 1);
