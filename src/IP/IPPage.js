@@ -9,7 +9,7 @@ import { useState} from "react";
 export default function IPPage() {
     const [ip, setIp] = useState("")
     const [ipInfo, setIpInfo] = useState(null)
-    const [error, setError] = useState(null)
+
 
     const getIpInfo = async () => {
         try {
