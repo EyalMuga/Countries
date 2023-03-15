@@ -5,9 +5,9 @@ import { Chip } from "@mui/material"
 import { Container } from "@mui/system";
 
 export default function Joke() {
-    const [joke, setJoke] = useState(null);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
+    const [joke, setJoke] = useState(null)
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
 
     const getJoke = () => {
         setLoading(true)
@@ -22,10 +22,12 @@ export default function Joke() {
                 setLoading(false)
             })
     }
-
     useEffect(() => {
-        getJoke()
-        setLoading(false)
+        const interval = setInterval(() => {
+            getJoke()
+        }, 5000)
+        // clean up function to stop interval when component unmounts
+        return () => clearInterval(interval)
     }, [])
 
     return (
@@ -40,6 +42,7 @@ export default function Joke() {
                 }}
             >
                 <h1>Chuck Norris Joke</h1>
+                <h4> Automatically Gets a new joke every 5 seconds</h4>
                 <br />
                 <br />
                 <Chip onClick={getJoke} label="Get Joke" />
