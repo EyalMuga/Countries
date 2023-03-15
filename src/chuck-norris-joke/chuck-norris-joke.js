@@ -7,7 +7,6 @@ import { Container } from "@mui/system";
 export default function Joke() {
     const [joke, setJoke] = useState(null)
     const [loading, setLoading] = useState(false)
-    const [error, setError] = useState(null)
 
     const getJoke = () => {
         setLoading(true)
