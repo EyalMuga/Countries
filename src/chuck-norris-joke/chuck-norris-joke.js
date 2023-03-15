@@ -7,6 +7,7 @@ import { Container } from "@mui/system";
 export default function Joke() {
     const [joke, setJoke] = useState(null)
     const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
 
     const getJoke = () => {
         setLoading(true)
@@ -29,7 +30,20 @@ export default function Joke() {
         return () => clearInterval(interval)
     }, [])
 
+
+    // export default async function getJoke() {
+    //     console.log("getJoke called")
+    //     const response = await axios.get("https://api.chucknorris.io/jokes/random")
+    //     if (response.status === 200 {
+    //         setJoke(response.data.value)
+    //     } else {
+    //         setError(response.data)
+    //     }
+    //     setLoading(false)
+    // }
+
     return (
+
         <>
             <Container
                 sx={{
@@ -41,12 +55,14 @@ export default function Joke() {
                 }}
             >
                 <h1>Chuck Norris Joke</h1>
-                <h4> Automatically Gets a new joke every 5 seconds</h4>
+                <p> Automatically Gets a new joke every 5 seconds</p>
                 <br />
                 <br />
                 <Chip onClick={getJoke} label="Get Joke" />
                 <br />
                 <br />
+                {loading && <p>Loading...</p>}
+                {error && <p style={{ color: "red" }}>Error: {error.message}</p>}
                 <h3 >{joke}</h3>
             </Container>
         </>
